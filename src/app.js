@@ -5,7 +5,7 @@ import "./style.css";
 import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
-window.onload = function() {
+window.onload = function randomCard() {
   //write your code here
   let numbers = [
     "A",
@@ -29,13 +29,22 @@ window.onload = function() {
   document.querySelector("#palo-top").innerHTML = stickRandom;
   document.querySelector("#palo-bottom").innerHTML = stickRandom;
 
-  if (stick[stickRandom] == "♦" || stick) {
-    let rombo = document.querySelector("#palo-bottom");
-    rombo.style.color = "red";
-  } else if (stick[stickRandom] == ":corazones:") {
-    let heart = document.querySelector("#palo-bottom");
-    heart.style.color = "red";
-  }
-
+  let changeColor = () => {
+    if (stickRandom == "♦" || stickRandom == "♥") {
+      let diamond = document.querySelector("#palo-bottom");
+      let heart = document.querySelector("#palo-top");
+      heart.style.color = "red";
+      diamond.style.color = "red";
+    } else if (stickRandom == "♠" || stickRandom == "♣") {
+      let spades = document.querySelector("#palo-bottom");
+      let clover = document.querySelector("#palo-top");
+      spades.style.color = "black";
+      clover.style.color = "black";
+    }
+  };
+  changeColor();
   document.querySelector("p").innerHTML = numbersRandom;
+
+  let button = document.querySelector(".btn-secondary");
+  button.addEventListener("click", randomCard);
 };

@@ -14,3 +14,7 @@ p {
 h1 {
   font-size: 100px;
 }
+
+#palo-bottom {
+  transform: rotate(180deg);
+}
