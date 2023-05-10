@@ -43,8 +43,7 @@ window.onload = function randomCard() {
     }
   };
   changeColor();
-  document.querySelector("p").innerHTML = numbersRandom;
-
   let button = document.querySelector(".btn-secondary");
   button.addEventListener("click", randomCard);
+  document.querySelector("p").innerHTML = numbersRandom;
 };
